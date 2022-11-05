@@ -9,11 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var counterLabel: UILabel!
+  
+  var amountOfClicks = 0
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    updateCounterLabel()
   }
 
-
+  @IBAction func buttonPressed(_ sender: UIButton) {
+    amountOfClicks += 1
+    updateCounterLabel()
+  }
+  
+  func updateCounterLabel() {
+    counterLabel.text = "Значение счётчика: \(amountOfClicks)"
+  }
+  
 }
 
